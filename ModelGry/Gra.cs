@@ -65,7 +65,7 @@ namespace ModelGry
                 max = temp;
             }
             Random generator = new Random();
-            return generator.Next(min, max + 1);
+            return generator.Next(min, max + 1);//
         }
     }
 }
