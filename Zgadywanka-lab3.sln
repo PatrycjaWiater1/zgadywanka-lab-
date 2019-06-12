@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelGry", "ModelGry\ModelG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectModelGry", "UnitTestProjectModelGry\UnitTestProjectModelGry.csproj", "{28475EAF-8154-4C12-B5B1-9542035D7BCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraGUI", "GraGUI\GraGUI.csproj", "{62D7BA24-0776-4768-AABB-9A2578157B4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{28475EAF-8154-4C12-B5B1-9542035D7BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28475EAF-8154-4C12-B5B1-9542035D7BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28475EAF-8154-4C12-B5B1-9542035D7BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D7BA24-0776-4768-AABB-9A2578157B4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D7BA24-0776-4768-AABB-9A2578157B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D7BA24-0776-4768-AABB-9A2578157B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D7BA24-0776-4768-AABB-9A2578157B4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

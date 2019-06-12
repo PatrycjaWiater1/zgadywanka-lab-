@@ -28,21 +28,42 @@ namespace GraGUI
         private void buttonWylosuj_Click(object sender, EventArgs e)
         {
             // wczytaj zakres do losowania
-            int a = int.Parse(textBox1.Text);
-            int b = int.Parse(textBox2.Text);
+            try
+            {
+                int a = int.Parse(textBox1.Text);
+                int b = int.Parse(textBox2.Text);
 
-            // utwórz gre
-            g = new Gra(a, b);
+                // utwórz gre
+                g = new Gra(a, b);
 
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
-            buttonWylosuj.Enabled = false;
+                textBox1.Enabled = false;
+                textBox2.Enabled = false;
+                buttonWylosuj.Enabled = false;
 
-            // wyświetl kolejne elementy formularza
+                // wyświetl kolejne elementy formularza
+                textBoxSprawdz.Visible = true;
+                buttonSprawdz.Visible = true;
+            }
+            catch (FormatException er)
+            {
+                errorMsg.Text = er.Message;
+                errorMsg.Visible = true;
+            }
+           
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonWyjscie_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void errorMsg_Click(object sender, EventArgs e)
         {
 
         }
