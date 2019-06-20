@@ -31,19 +31,18 @@
             this.buttonNowaGra = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxDo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxOd = new System.Windows.Forms.TextBox();
             this.buttonWylosuj = new System.Windows.Forms.Button();
-            this.LabelZaDuzo = new System.Windows.Forms.Label();
-            this.LabelZaMalo = new System.Windows.Forms.Label();
-            this.LabelTrafiles = new System.Windows.Forms.Label();
+            this.LabelWynik = new System.Windows.Forms.Label();
             this.buttonSprawdz = new System.Windows.Forms.Button();
             this.textBoxSprawdz = new System.Windows.Forms.TextBox();
             this.buttonWyjscie = new System.Windows.Forms.Button();
-            this.buttonZakoncz = new System.Windows.Forms.Button();
             this.errorMsg = new System.Windows.Forms.Label();
             this.WylosowanaLiczba = new System.Windows.Forms.Label();
+            this.buttonAgain = new System.Windows.Forms.Button();
+            this.labelIle = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +59,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBoxDo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxOd);
             this.groupBox1.Controls.Add(this.buttonWylosuj);
@@ -81,12 +80,12 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Zakres do";
             // 
-            // textBox2
+            // textBoxDo
             // 
-            this.textBox2.Location = new System.Drawing.Point(81, 91);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(109, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBoxDo.Location = new System.Drawing.Point(81, 91);
+            this.textBoxDo.Name = "textBoxDo";
+            this.textBoxDo.Size = new System.Drawing.Size(109, 20);
+            this.textBoxDo.TabIndex = 3;
             // 
             // label1
             // 
@@ -115,38 +114,16 @@
             this.buttonWylosuj.UseVisualStyleBackColor = true;
             this.buttonWylosuj.Click += new System.EventHandler(this.buttonWylosuj_Click);
             // 
-            // LabelZaDuzo
+            // LabelWynik
             // 
-            this.LabelZaDuzo.AutoSize = true;
-            this.LabelZaDuzo.ForeColor = System.Drawing.Color.Red;
-            this.LabelZaDuzo.Location = new System.Drawing.Point(32, 325);
-            this.LabelZaDuzo.Name = "LabelZaDuzo";
-            this.LabelZaDuzo.Size = new System.Drawing.Size(49, 13);
-            this.LabelZaDuzo.TabIndex = 2;
-            this.LabelZaDuzo.Text = "Za dużo!";
-            this.LabelZaDuzo.Visible = false;
-            // 
-            // LabelZaMalo
-            // 
-            this.LabelZaMalo.AutoSize = true;
-            this.LabelZaMalo.ForeColor = System.Drawing.Color.Red;
-            this.LabelZaMalo.Location = new System.Drawing.Point(117, 325);
-            this.LabelZaMalo.Name = "LabelZaMalo";
-            this.LabelZaMalo.Size = new System.Drawing.Size(50, 13);
-            this.LabelZaMalo.TabIndex = 3;
-            this.LabelZaMalo.Text = "Za mało!";
-            this.LabelZaMalo.Visible = false;
-            // 
-            // LabelTrafiles
-            // 
-            this.LabelTrafiles.AutoSize = true;
-            this.LabelTrafiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.LabelTrafiles.Location = new System.Drawing.Point(212, 325);
-            this.LabelTrafiles.Name = "LabelTrafiles";
-            this.LabelTrafiles.Size = new System.Drawing.Size(78, 13);
-            this.LabelTrafiles.TabIndex = 4;
-            this.LabelTrafiles.Text = "Brawo, trafiłeś!";
-            this.LabelTrafiles.Visible = false;
+            this.LabelWynik.AutoSize = true;
+            this.LabelWynik.ForeColor = System.Drawing.Color.Red;
+            this.LabelWynik.Location = new System.Drawing.Point(117, 325);
+            this.LabelWynik.Name = "LabelWynik";
+            this.LabelWynik.Size = new System.Drawing.Size(50, 13);
+            this.LabelWynik.TabIndex = 3;
+            this.LabelWynik.Text = "Za mało!";
+            this.LabelWynik.Visible = false;
             // 
             // buttonSprawdz
             // 
@@ -157,6 +134,7 @@
             this.buttonSprawdz.Text = "Sprawdź.";
             this.buttonSprawdz.UseVisualStyleBackColor = true;
             this.buttonSprawdz.Visible = false;
+            this.buttonSprawdz.Click += new System.EventHandler(this.buttonSprawdz_Click);
             // 
             // textBoxSprawdz
             // 
@@ -175,16 +153,6 @@
             this.buttonWyjscie.Text = "Wyjście.";
             this.buttonWyjscie.UseVisualStyleBackColor = true;
             this.buttonWyjscie.Click += new System.EventHandler(this.buttonWyjscie_Click);
-            // 
-            // buttonZakoncz
-            // 
-            this.buttonZakoncz.Location = new System.Drawing.Point(120, 393);
-            this.buttonZakoncz.Name = "buttonZakoncz";
-            this.buttonZakoncz.Size = new System.Drawing.Size(75, 23);
-            this.buttonZakoncz.TabIndex = 8;
-            this.buttonZakoncz.Text = "Zakończ.";
-            this.buttonZakoncz.UseVisualStyleBackColor = true;
-            this.buttonZakoncz.Visible = false;
             // 
             // errorMsg
             // 
@@ -207,20 +175,40 @@
             this.WylosowanaLiczba.Text = "label3";
             this.WylosowanaLiczba.Visible = false;
             // 
+            // buttonAgain
+            // 
+            this.buttonAgain.Location = new System.Drawing.Point(100, 415);
+            this.buttonAgain.Name = "buttonAgain";
+            this.buttonAgain.Size = new System.Drawing.Size(102, 23);
+            this.buttonAgain.TabIndex = 11;
+            this.buttonAgain.Text = "Jeszcze raz?";
+            this.buttonAgain.UseVisualStyleBackColor = true;
+            this.buttonAgain.Visible = false;
+            this.buttonAgain.Click += new System.EventHandler(this.buttonAgain_Click);
+            // 
+            // labelIle
+            // 
+            this.labelIle.AutoSize = true;
+            this.labelIle.Location = new System.Drawing.Point(117, 376);
+            this.labelIle.Name = "labelIle";
+            this.labelIle.Size = new System.Drawing.Size(35, 13);
+            this.labelIle.TabIndex = 12;
+            this.labelIle.Text = "label3";
+            this.labelIle.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(309, 450);
+            this.Controls.Add(this.labelIle);
+            this.Controls.Add(this.buttonAgain);
             this.Controls.Add(this.WylosowanaLiczba);
             this.Controls.Add(this.errorMsg);
-            this.Controls.Add(this.buttonZakoncz);
             this.Controls.Add(this.buttonWyjscie);
             this.Controls.Add(this.textBoxSprawdz);
             this.Controls.Add(this.buttonSprawdz);
-            this.Controls.Add(this.LabelTrafiles);
-            this.Controls.Add(this.LabelZaMalo);
-            this.Controls.Add(this.LabelZaDuzo);
+            this.Controls.Add(this.LabelWynik);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonNowaGra);
             this.Name = "Form1";
@@ -237,19 +225,18 @@
         private System.Windows.Forms.Button buttonNowaGra;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxDo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxOd;
         private System.Windows.Forms.Button buttonWylosuj;
-        private System.Windows.Forms.Label LabelZaDuzo;
-        private System.Windows.Forms.Label LabelZaMalo;
-        private System.Windows.Forms.Label LabelTrafiles;
+        private System.Windows.Forms.Label LabelWynik;
         private System.Windows.Forms.Button buttonSprawdz;
         private System.Windows.Forms.TextBox textBoxSprawdz;
         private System.Windows.Forms.Button buttonWyjscie;
-        private System.Windows.Forms.Button buttonZakoncz;
         private System.Windows.Forms.Label errorMsg;
         private System.Windows.Forms.Label WylosowanaLiczba;
+        private System.Windows.Forms.Button buttonAgain;
+        private System.Windows.Forms.Label labelIle;
     }
 }
 

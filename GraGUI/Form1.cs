@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ModelGry;
+using static ModelGry.Gra;
 
 namespace GraGUI
 {
@@ -31,18 +32,20 @@ namespace GraGUI
             try
             {
                 int a = int.Parse(textBoxOd.Text);
-                int b = int.Parse(textBox2.Text);
+                int b = int.Parse(textBoxDo.Text);
 
                 // utwórz gre
                 g = new Gra(a, b);
 
                 textBoxOd.Enabled = false;
-                textBox2.Enabled = false;
+                textBoxDo.Enabled = false;
                 buttonWylosuj.Enabled = false;
 
                 // wyświetl kolejne elementy formularza
                 textBoxSprawdz.Visible = true;
                 buttonSprawdz.Visible = true;
+                WylosowanaLiczba.Visible = true;
+                WylosowanaLiczba.Text = g.wylosowana.ToString();
             }
             catch (FormatException er)
             {
@@ -66,6 +69,65 @@ namespace GraGUI
         private void errorMsg_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClearAndFocusTextbox()
+        {
+            textBoxSprawdz.Text = "";
+            textBoxSprawdz.Focus();
+        }
+
+        private void NewGame()
+        {
+            textBoxOd.Enabled = true;
+            textBoxDo.Enabled = true;
+            buttonWylosuj.Enabled = true;
+            WylosowanaLiczba.Visible = false;
+            textBoxSprawdz.Visible = false;
+            buttonSprawdz.Visible = false;
+            LabelWynik.Visible = false;
+            buttonAgain.Visible = false;
+            textBoxOd.Text = "";
+            textBoxDo.Text = "";
+            labelIle.Text = "";
+            labelIle.Visible = false;
+        }
+
+        private void buttonSprawdz_Click(object sender, EventArgs e)
+        {
+            int wprowadzona = int.Parse(textBoxSprawdz.Text);
+            Odpowiedz odp = g.Ocena(wprowadzona);
+            switch (odp)
+            {
+                case Odpowiedz.ZaMalo:
+                    LabelWynik.Visible = true;
+                    LabelWynik.Text = "Za malo!";
+                    LabelWynik.ForeColor = System.Drawing.Color.Red;
+                    ClearAndFocusTextbox();
+                    break;
+                case Odpowiedz.ZaDuzo:
+                    LabelWynik.Visible = true;
+                    LabelWynik.Text = "Za duzo!";
+                    LabelWynik.ForeColor = System.Drawing.Color.Red;
+                    ClearAndFocusTextbox();
+                    break;
+                case Odpowiedz.Trafiono:
+                    LabelWynik.Visible = true;
+                    LabelWynik.Text = "Brawo!";
+                    LabelWynik.ForeColor = System.Drawing.Color.Green;
+                    ClearAndFocusTextbox();
+                    buttonAgain.Visible = true;
+                    labelIle.Visible = true;
+                    labelIle.Text = "Trafiles za "+g.LicznikRuchow.ToString()+" razem";
+                    break;
+            }
+
+        }
+
+        private void buttonAgain_Click(object sender, EventArgs e)
+        {
+            NewGame();
+            
         }
     }
 }

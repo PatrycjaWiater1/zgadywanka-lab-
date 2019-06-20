@@ -13,18 +13,18 @@ namespace ModelGry
         public State StanGry { get; private set; }
         public readonly int ZakresOd;
         public readonly int ZakresDo;
-        private readonly int wylosowana;
-        public int? Wylosowana
-        {
-            get
-            {
-                if (StanGry != State.Trwa)
-                    return wylosowana;
-                else
-                    return null;
-            }
-            //set { }
-        }
+        public readonly int wylosowana;
+        //public int? Wylosowana
+        //{
+        //    get
+        //    {
+        //        if (StanGry != State.Trwa)
+        //            return wylosowana;
+        //        else
+        //            return null;
+        //    }
+        //    //set { }
+        //}
 
         // historia gry: ToDo
         public int LicznikRuchow { get; private set; } = 0;
@@ -60,6 +60,8 @@ namespace ModelGry
         {
             StanGry = State.Poddana;
         }
+
+
 
         public static int Losuj(int min = 1, int max = 100)
         {
