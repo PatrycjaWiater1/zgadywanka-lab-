@@ -30,13 +30,13 @@ namespace GraGUI
             // wczytaj zakres do losowania
             try
             {
-                int a = int.Parse(textBox1.Text);
+                int a = int.Parse(textBoxOd.Text);
                 int b = int.Parse(textBox2.Text);
 
                 // utwórz gre
                 g = new Gra(a, b);
 
-                textBox1.Enabled = false;
+                textBoxOd.Enabled = false;
                 textBox2.Enabled = false;
                 buttonWylosuj.Enabled = false;
 

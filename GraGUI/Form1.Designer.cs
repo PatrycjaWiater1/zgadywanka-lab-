@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxOd = new System.Windows.Forms.TextBox();
             this.buttonWylosuj = new System.Windows.Forms.Button();
             this.LabelZaDuzo = new System.Windows.Forms.Label();
             this.LabelZaMalo = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.buttonWyjscie = new System.Windows.Forms.Button();
             this.buttonZakoncz = new System.Windows.Forms.Button();
             this.errorMsg = new System.Windows.Forms.Label();
-            this.TemporaryLabel = new System.Windows.Forms.Label();
+            this.WylosowanaLiczba = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +62,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBoxOd);
             this.groupBox1.Controls.Add(this.buttonWylosuj);
             this.groupBox1.Location = new System.Drawing.Point(12, 61);
             this.groupBox1.Name = "groupBox1";
@@ -97,13 +97,13 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Zakres od";
             // 
-            // textBox1
+            // textBoxOd
             // 
-            this.textBox1.Location = new System.Drawing.Point(81, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(109, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxOd.Location = new System.Drawing.Point(81, 40);
+            this.textBoxOd.Name = "textBoxOd";
+            this.textBoxOd.Size = new System.Drawing.Size(109, 20);
+            this.textBoxOd.TabIndex = 1;
+            this.textBoxOd.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // buttonWylosuj
             // 
@@ -197,22 +197,22 @@
             this.errorMsg.Visible = false;
             this.errorMsg.Click += new System.EventHandler(this.errorMsg_Click);
             // 
-            // TemporaryLabel
+            // WylosowanaLiczba
             // 
-            this.TemporaryLabel.AutoSize = true;
-            this.TemporaryLabel.Location = new System.Drawing.Point(35, 212);
-            this.TemporaryLabel.Name = "TemporaryLabel";
-            this.TemporaryLabel.Size = new System.Drawing.Size(35, 13);
-            this.TemporaryLabel.TabIndex = 10;
-            this.TemporaryLabel.Text = "label3";
-            this.TemporaryLabel.Visible = false;
+            this.WylosowanaLiczba.AutoSize = true;
+            this.WylosowanaLiczba.Location = new System.Drawing.Point(35, 212);
+            this.WylosowanaLiczba.Name = "WylosowanaLiczba";
+            this.WylosowanaLiczba.Size = new System.Drawing.Size(35, 13);
+            this.WylosowanaLiczba.TabIndex = 10;
+            this.WylosowanaLiczba.Text = "label3";
+            this.WylosowanaLiczba.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(309, 450);
-            this.Controls.Add(this.TemporaryLabel);
+            this.Controls.Add(this.WylosowanaLiczba);
             this.Controls.Add(this.errorMsg);
             this.Controls.Add(this.buttonZakoncz);
             this.Controls.Add(this.buttonWyjscie);
@@ -224,7 +224,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonNowaGra);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Za dużo za mało.";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -239,7 +239,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxOd;
         private System.Windows.Forms.Button buttonWylosuj;
         private System.Windows.Forms.Label LabelZaDuzo;
         private System.Windows.Forms.Label LabelZaMalo;
@@ -249,7 +249,7 @@
         private System.Windows.Forms.Button buttonWyjscie;
         private System.Windows.Forms.Button buttonZakoncz;
         private System.Windows.Forms.Label errorMsg;
-        private System.Windows.Forms.Label TemporaryLabel;
+        private System.Windows.Forms.Label WylosowanaLiczba;
     }
 }
 
