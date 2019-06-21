@@ -52,7 +52,6 @@ namespace ModelGry
                 StanGry = State.Odgadnieta;
                 odp = Odpowiedz.Trafiono;
             }
-            historia.Add(new Ruch(propozycja, odp));
             return odp;
         }
 

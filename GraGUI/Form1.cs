@@ -15,9 +15,11 @@ namespace GraGUI
     public partial class Form1 : Form
     {
         private Gra g;
+        private Ruch hist = new Ruch();
         public Form1()
         {
             InitializeComponent();
+            this.Width = 326;
         }
 
         private void buttonNowaGra_Click(object sender, EventArgs e)
@@ -49,8 +51,9 @@ namespace GraGUI
             }
             catch (FormatException er)
             {
-                errorMsg.Text = er.Message;
-                errorMsg.Visible = true;
+                string message = er.Message + Environment.NewLine + "Wprowadz poprawna liczbe.";
+                string title = "Niepoprawne dane";
+                MessageBox.Show(message, title);
             }
            
 
@@ -91,36 +94,51 @@ namespace GraGUI
             textBoxDo.Text = "";
             labelIle.Text = "";
             labelIle.Visible = false;
+            this.Width = 326;
+            this.Height = 522;
+            buttonHistoria.Visible = false;
         }
 
         private void buttonSprawdz_Click(object sender, EventArgs e)
         {
-            int wprowadzona = int.Parse(textBoxSprawdz.Text);
-            Odpowiedz odp = g.Ocena(wprowadzona);
-            switch (odp)
+            try
             {
-                case Odpowiedz.ZaMalo:
-                    LabelWynik.Visible = true;
-                    LabelWynik.Text = "Za malo!";
-                    LabelWynik.ForeColor = System.Drawing.Color.Red;
-                    ClearAndFocusTextbox();
-                    break;
-                case Odpowiedz.ZaDuzo:
-                    LabelWynik.Visible = true;
-                    LabelWynik.Text = "Za duzo!";
-                    LabelWynik.ForeColor = System.Drawing.Color.Red;
-                    ClearAndFocusTextbox();
-                    break;
-                case Odpowiedz.Trafiono:
-                    LabelWynik.Visible = true;
-                    LabelWynik.Text = "Brawo!";
-                    LabelWynik.ForeColor = System.Drawing.Color.Green;
-                    ClearAndFocusTextbox();
-                    buttonAgain.Visible = true;
-                    labelIle.Visible = true;
-                    labelIle.Text = "Trafiles za "+g.LicznikRuchow.ToString()+" razem";
-                    break;
+                int wprowadzona = int.Parse(textBoxSprawdz.Text);
+                Odpowiedz odp = g.Ocena(wprowadzona);
+                hist.DodajPozycje(wprowadzona, odp);
+                switch (odp)
+                {
+                    case Odpowiedz.ZaMalo:
+                        LabelWynik.Visible = true;
+                        LabelWynik.Text = "Za malo!";
+                        LabelWynik.ForeColor = System.Drawing.Color.Red;
+                        ClearAndFocusTextbox();
+                        break;
+                    case Odpowiedz.ZaDuzo:
+                        LabelWynik.Visible = true;
+                        LabelWynik.Text = "Za duzo!";
+                        LabelWynik.ForeColor = System.Drawing.Color.Red;
+                        ClearAndFocusTextbox();
+                        break;
+                    case Odpowiedz.Trafiono:
+                        LabelWynik.Visible = true;
+                        LabelWynik.Text = "Brawo!";
+                        LabelWynik.ForeColor = System.Drawing.Color.Green;
+                        ClearAndFocusTextbox();
+                        buttonAgain.Visible = true;
+                        labelIle.Visible = true;
+                        labelIle.Text = "Trafiles za " + g.LicznikRuchow.ToString() + " razem";
+                        buttonHistoria.Enabled = true;
+                        buttonHistoria.Visible = true;
+                        break;
+                }
+            }catch(FormatException err)
+            {
+                string message = err.Message + Environment.NewLine + "Wprowadz poprawna liczbe.";
+                string title = "Niepoprawne dane";
+                MessageBox.Show(message, title);
             }
+            
 
         }
 
@@ -128,6 +146,27 @@ namespace GraGUI
         {
             NewGame();
             
+        }
+
+        private void buttonHistoria_Click(object sender, EventArgs e)
+        {
+            buttonHistoria.Enabled = false;
+            this.Width = 634;
+            this.Height = 522;
+            textBoxHistoria.AppendText("Historia ruchow");
+            textBoxHistoria.AppendText(Environment.NewLine);
+            var data = hist.GetPropozycje();
+            int i = 1;
+            foreach (var item in data)
+            {
+                textBoxHistoria.AppendText("Proba "+i+": "+item.ToString());
+                textBoxHistoria.AppendText(Environment.NewLine);
+                i++;
+            }
+            //textBoxHistoria.AppendText(data[0].ToString());
+            //textBoxHistoria.AppendText(Environment.NewLine);
+            //textBoxHistoria.AppendText(data[1].ToString());
+
         }
     }
 }

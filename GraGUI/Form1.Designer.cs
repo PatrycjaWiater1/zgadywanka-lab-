@@ -39,10 +39,11 @@
             this.buttonSprawdz = new System.Windows.Forms.Button();
             this.textBoxSprawdz = new System.Windows.Forms.TextBox();
             this.buttonWyjscie = new System.Windows.Forms.Button();
-            this.errorMsg = new System.Windows.Forms.Label();
             this.WylosowanaLiczba = new System.Windows.Forms.Label();
             this.buttonAgain = new System.Windows.Forms.Button();
             this.labelIle = new System.Windows.Forms.Label();
+            this.buttonHistoria = new System.Windows.Forms.Button();
+            this.textBoxHistoria = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,17 +155,6 @@
             this.buttonWyjscie.UseVisualStyleBackColor = true;
             this.buttonWyjscie.Click += new System.EventHandler(this.buttonWyjscie_Click);
             // 
-            // errorMsg
-            // 
-            this.errorMsg.AutoSize = true;
-            this.errorMsg.Location = new System.Drawing.Point(32, 289);
-            this.errorMsg.Name = "errorMsg";
-            this.errorMsg.Size = new System.Drawing.Size(35, 13);
-            this.errorMsg.TabIndex = 9;
-            this.errorMsg.Text = "label3";
-            this.errorMsg.Visible = false;
-            this.errorMsg.Click += new System.EventHandler(this.errorMsg_Click);
-            // 
             // WylosowanaLiczba
             // 
             this.WylosowanaLiczba.AutoSize = true;
@@ -177,7 +167,7 @@
             // 
             // buttonAgain
             // 
-            this.buttonAgain.Location = new System.Drawing.Point(100, 415);
+            this.buttonAgain.Location = new System.Drawing.Point(151, 429);
             this.buttonAgain.Name = "buttonAgain";
             this.buttonAgain.Size = new System.Drawing.Size(102, 23);
             this.buttonAgain.TabIndex = 11;
@@ -196,15 +186,36 @@
             this.labelIle.Text = "label3";
             this.labelIle.Visible = false;
             // 
+            // buttonHistoria
+            // 
+            this.buttonHistoria.Location = new System.Drawing.Point(50, 429);
+            this.buttonHistoria.Name = "buttonHistoria";
+            this.buttonHistoria.Size = new System.Drawing.Size(75, 23);
+            this.buttonHistoria.TabIndex = 14;
+            this.buttonHistoria.Text = "Historia";
+            this.buttonHistoria.UseVisualStyleBackColor = true;
+            this.buttonHistoria.Visible = false;
+            this.buttonHistoria.Click += new System.EventHandler(this.buttonHistoria_Click);
+            // 
+            // textBoxHistoria
+            // 
+            this.textBoxHistoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxHistoria.Location = new System.Drawing.Point(326, 16);
+            this.textBoxHistoria.Multiline = true;
+            this.textBoxHistoria.Name = "textBoxHistoria";
+            this.textBoxHistoria.Size = new System.Drawing.Size(280, 436);
+            this.textBoxHistoria.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 450);
+            this.ClientSize = new System.Drawing.Size(618, 483);
+            this.Controls.Add(this.textBoxHistoria);
+            this.Controls.Add(this.buttonHistoria);
             this.Controls.Add(this.labelIle);
             this.Controls.Add(this.buttonAgain);
             this.Controls.Add(this.WylosowanaLiczba);
-            this.Controls.Add(this.errorMsg);
             this.Controls.Add(this.buttonWyjscie);
             this.Controls.Add(this.textBoxSprawdz);
             this.Controls.Add(this.buttonSprawdz);
@@ -233,10 +244,11 @@
         private System.Windows.Forms.Button buttonSprawdz;
         private System.Windows.Forms.TextBox textBoxSprawdz;
         private System.Windows.Forms.Button buttonWyjscie;
-        private System.Windows.Forms.Label errorMsg;
         private System.Windows.Forms.Label WylosowanaLiczba;
         private System.Windows.Forms.Button buttonAgain;
         private System.Windows.Forms.Label labelIle;
+        private System.Windows.Forms.Button buttonHistoria;
+        private System.Windows.Forms.TextBox textBoxHistoria;
     }
 }
 

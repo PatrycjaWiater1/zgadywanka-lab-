@@ -15,21 +15,41 @@ namespace ModelGry
 
         public class Ruch
         {
-            public readonly int propozycja; // 
-            public readonly Odpowiedz odpowiedz;
-            public readonly DateTime kiedy;
+            //public readonly int propozycja; // 
+            //public readonly Odpowiedz odpowiedz;
+            //public readonly DateTime kiedy;
+            //IList<int> propozycja = new List<int>();
+            //IList<Odpowiedz> odpowiedz = new List<Odpowiedz>();
+            //IList<DateTime> kiedy = new List<DateTime>();
 
-            public Ruch(int prop, Odpowiedz odp)
+            IList<Tuple<int,Odpowiedz,DateTime>> historia = new List<Tuple<int, Odpowiedz, DateTime>>();
+
+            //public Ruch(int prop, Odpowiedz odp)
+            //{
+            //    propozycja.Add(prop);
+            //    odpowiedz.Add(odp);
+            //    kiedy.Add(DateTime.Now);
+            //}
+
+            public void DodajPozycje(int prop, Odpowiedz odp)
             {
-                propozycja = prop;
-                odpowiedz = odp;
-                kiedy = DateTime.Now;
+                //propozycja.Add(prop);
+                //odpowiedz.Add(odp);
+                //kiedy.Add(DateTime.Now);
+                historia.Add(new Tuple<int, Odpowiedz, DateTime>(prop, odp, DateTime.Now));
             }
 
-            public override string ToString()
+            public List<Tuple<int, Odpowiedz, DateTime>> GetPropozycje()
             {
-                return $"({propozycja}, {odpowiedz}, {kiedy})";
+                List<Tuple<int, Odpowiedz, DateTime>> lista;
+                lista = historia.Select(x => x).ToList();
+                return lista;
             }
+
+            //public override string ToString()
+            //{
+            //    return $"({propozycja}, {odpowiedz}, {kiedy})";
+            //}
         }
     }
 }
