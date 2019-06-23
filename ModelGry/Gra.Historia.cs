@@ -46,6 +46,7 @@ namespace ModelGry
                 return lista;
             }
 
+
             //public override string ToString()
             //{
             //    return $"({propozycja}, {odpowiedz}, {kiedy})";

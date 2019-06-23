@@ -82,6 +82,9 @@ namespace GraGUI
 
         private void NewGame()
         {
+            textBoxHistoria.Text = "";
+            hist = null;
+            hist = new Ruch();
             textBoxOd.Enabled = true;
             textBoxDo.Enabled = true;
             buttonWylosuj.Enabled = true;
@@ -132,7 +135,8 @@ namespace GraGUI
                         buttonHistoria.Visible = true;
                         break;
                 }
-            }catch(FormatException err)
+            }
+            catch (FormatException err)
             {
                 string message = err.Message + Environment.NewLine + "Wprowadz poprawna liczbe.";
                 string title = "Niepoprawne dane";

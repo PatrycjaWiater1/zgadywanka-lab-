@@ -179,7 +179,7 @@
             // labelIle
             // 
             this.labelIle.AutoSize = true;
-            this.labelIle.Location = new System.Drawing.Point(117, 376);
+            this.labelIle.Location = new System.Drawing.Point(90, 374);
             this.labelIle.Name = "labelIle";
             this.labelIle.Size = new System.Drawing.Size(35, 13);
             this.labelIle.TabIndex = 12;
@@ -199,10 +199,12 @@
             // 
             // textBoxHistoria
             // 
+            this.textBoxHistoria.Cursor = System.Windows.Forms.Cursors.No;
             this.textBoxHistoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxHistoria.Location = new System.Drawing.Point(326, 16);
             this.textBoxHistoria.Multiline = true;
             this.textBoxHistoria.Name = "textBoxHistoria";
+            this.textBoxHistoria.ReadOnly = true;
             this.textBoxHistoria.Size = new System.Drawing.Size(280, 436);
             this.textBoxHistoria.TabIndex = 15;
             // 
